@@ -1,0 +1,21 @@
+{% block body %}
+ 
+<div class="block1">
+<br>
+	<h1>Image Upload to Resize</h1>
+<br>
+<form action = "/yaml_des" method = "POST" enctype = "multipart/form-data">
+	<input type = "file" name = "file" />
+	<input type = "submit"/>
+</div>
+
+<div class="text-center">
+		{% if results|length > 0 %}
+		<br>    
+			<p>{{ results }} </p>
+		{% endif %}
+</div> 
+
+
+{% endblock %}
+

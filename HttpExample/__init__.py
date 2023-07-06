@@ -7,7 +7,20 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Welcome to the compromising of Azure functions and Storage Accounts!'
+    return render_template('index.html')
+    #return 'Welcome to the compromising of Azure functions and Storage Accounts!'
+
+
+@app.route('/yaml_des')
+def yaml_des():
+    if request.method == 'POST':
+        logging.info("I am in POST")
+        yfile = req.files.get('file')    
+        ycontent = yaml.load(yfile)
+        logging.info(ycontent.get('reason'))
+        return render_template('test.html', results=ycontent.get('reason'))
+        return func.HttpResponse(ycontent.get('reason'))
+    return render_template('test.html')
 
 
 @app.route('/create')

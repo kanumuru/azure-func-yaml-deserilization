@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YAML Formatting Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    
+    h1 {
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    p {
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+    
+    code {
+      background-color: #f1f1f1;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>YAML Formatting Guide</h1>
+  
+  <h2>What is YAML?</h2>
+  <p>YAML (YAML Ain't Markup Language) is a human-readable data serialization format. It is commonly used for configuration files and data exchange between programming languages.</p>
+  
+  <h2>Basic YAML Syntax</h2>
+  <p>YAML uses indentation and colons to define its structure. Here's an example:</p>
+  
+  <pre><code>
+key1: value1
+key2:
+  - item1
+  - item2
+key3:
+  subkey1: subvalue1
+  subkey2: subvalue2
+  </code></pre>
+  
+  <h2>Key-Value Pairs</h2>
+  <p>In YAML, data is represented using key-value pairs. Keys and values can be strings, numbers, booleans, or even nested objects. Here's an example:</p>
+  
+  <pre><code>
+name: John Doe
+age: 25
+isStudent: true
+</code></pre>
+  
+  <h2>Lists and Arrays</h2>
+  <p>YAML supports lists and arrays. You can represent them using dashes followed by a space (-) for each item. Here's an example:</p>
+  
+  <pre><code>
+fruits:
+  - apple
+  - banana
+  - orange
+</code></pre>
+  
+  <h2>Nested Objects</h2>
+  <p>You can nest objects within YAML. Indentation is used to indicate the nested structure. Here's an example:</p>
+  
+  <pre><code>
+person:
+  name: John Doe
+  age: 25
+  address:
+    street: 123 Main St
+    city: Exampleville
+    country: USA
+</code></pre>
+  
+  <h2>Comments</h2>
+  <p>YAML allows comments to provide additional information. Comments start with the hash symbol (#). Here's an example:</p>
+  
+  <pre><code>
+# This is a comment
+name: John Doe # This is another comment
+</code></pre>
+  
+  <h2>YAML Anchors and Aliases</h2>
+  <p>YAML provides a way to reference values using anchors and aliases. An anchor is defined using the ampersand (&) symbol, and an alias is defined using the asterisk (*) symbol. Here's an example:</p>
+  
+  <pre><code>
+defaults: &defaults
+  timeout: 30
+  retries: 3
+
+server1:
+  <<: *defaults
+  address: 192.168.1.100
+
+server2:
+  <<: *defaults
+  address: 192.168.1.101
+</code></pre>
+  
+ </body>
+</html>
