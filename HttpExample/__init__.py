@@ -11,11 +11,11 @@ def hello_world():
     #return 'Welcome to the compromising of Azure functions and Storage Accounts!'
 
 
-@app.route('/yaml_des')
+@app.route('/yaml_des',methods=['GET', 'POST'])
 def yaml_des():
     if request.method == 'POST':
         logging.info("I am in POST")
-        yfile = req.files.get('file')    
+        yfile = request.files.get('file')    
         ycontent = yaml.load(yfile)
         logging.info(ycontent.get('reason'))
         return render_template('test.html', results=ycontent.get('reason'))
@@ -54,6 +54,3 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             }
             resp = doAction.get(req.method).decode()
             return func.HttpResponse(resp, mimetype='text/html')
-
-
-
